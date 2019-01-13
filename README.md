@@ -5,7 +5,8 @@
 [Matthew Wilkens](https://english.nd.edu/people/faculty/wilkens/), University of Notre Dame\
 CDT 30380 / ENGL 30010, Spring 2019\
 MW 11:00-12:15, [246 Hesburgh Library](https://cds.library.nd.edu/spaces/)\
-Office hours: Th 9:00-5:00 ([reserve slots](https://bit.ly/wilkens_appointments)), 320 Decio Hall. **Note:** I'm generally in my office all day on Thursdays, but I do sometimes have a conflict or need to step out. Reservations are strongly recommended.
+Office hours: Th 9:00-5:00 ([reserve slots](https://bit.ly/wilkens_appointments)), 320 Decio Hall. 
+>**Note:** I'm generally in my office all day on Thursdays, but I do sometimes have a conflict or need to step out. Reservations are strongly recommended.
 
 ## Summary
 A technical, undergraduate-level course in quantitive and computational approaches to analyzing large bodies of text. 
