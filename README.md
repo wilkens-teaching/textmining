@@ -33,9 +33,11 @@ A more general-purpose textbook on machine learning. Greater emphasis on neural 
 
 ## Objectives
 
-The primary objective of the course is to build proficiency in applied text and data mining. Students who complete the course will have knowledge of standard approaches to text analysis and will be familiar with the humanistic ends to which those approaches might be put. Secondary objectives include acquiring basic understandings of 
+The primary objective of the course is to build proficiency in applied text analysis and data mining. Students who complete the course will have knowledge of standard approaches to text analysis and will be familiar with the humanistic ends to which those approaches might be put. Secondary objectives include acquiring basic understanding of relevant literary history, of integrating quantitative with qualitative evidence, and of best practices in data science project management.
 
 ## Work and grading
+
+In addition to weekly problem sets, you will be required to complete one project proposal of about 1,000 words, a brief in-class presentation, and a final project that employs computational techniques covered in the course. Overall grades will be based on the problem sets (35% in sum), proposal (10%), presentation (5%), final project (30%), and class participation (20%). _You must satisfactorily complete all assignments to pass the course._
 
 
 ## Policy statements
@@ -58,4 +60,109 @@ Students with documented disabilities who need accommodations or have questions 
 
 ## Schedule
 
+Detailed assignments will be provided separately.
 
+**Note: All dates and assignments are subject to change.**
+
+**Week 1** 
+
+* Weds, 1/16. Introduction, background, mechanics.
+
+**Week 2** 
+
+* Mon, 1/21. **No class** (MLK Day).
+* Weds, 1/23. 
+  * Read Bengfort et al., chapter 1 (language and computation). 
+  * Due: Implement `parse_gender` function as described (pp. 10-12). Submit output for two literary texts from the class corpus on GitHub.
+
+**Week 3** 
+
+* Mon, 1/28. 
+  * Read chapter 2 (corpora).
+* Weds, 1/30. 
+  * Due: Write an NLTK `PlaintextCorpusReader` function that ingests the class corpus.
+ 
+**Week 4** 
+
+* Mon, 2/4. **No class** (instructor travel).
+* Weds, 2/6. 
+  * Read chapter 3 (preprocessing).
+  * Due: Build a processed and pickled version of the class corpus as described in the chapter.
+
+**Week 5** 
+
+* Mon, 2/11.
+  * Read chapter 4 (vectorization).
+* Weds, 2/13.
+  * Due: Vectorize the corpus using the Scikit-Learn `TfidfVectorizer`. Visualize output via PCA.
+
+**Week 6**
+
+* Mon, 2/18. **No class** (instructor travel).
+* Weds, 2/20.
+  * Read chapter 5 (classification).
+
+**Week 7**
+
+* Mon, 2/25.
+  * Read chapter 6 (clustering).
+  * Due: Build and evaluate a system that classifies corpus texts as *either* male/female *or* British/American.
+* Weds, 2/27. **No class** (instructor travel).
+
+**Week 8**
+
+* Mon, 3/4.
+  * Due: Build a system that performs topic modeling on the corpus texts and clusters those texts based on their topical content.
+  * Read chapter 7 (context-aware analysis).
+* Weds, 3/6.
+  * Due: Reimplement the gender/nationality classification system using n-gram features as described in chapter 7. Evaluate the performance of the new model relative to the unigram original.
+
+**Week 9. Spring break.** No class meetings.
+
+**Week 10**
+
+* Mon, 3/18.
+  * Read chapter 8 (visualization).
+* Weds, 3/20.
+  * Read Tufte article.
+  * Due: Visualization exercise.
+
+**Week 11**
+
+* Mon, 3/25.
+  * Read chapter 9 (networks).
+* Weds, 3/27.
+  * Read Underwood, Bamman, and Lee article.
+  * Due: Implement entity resolution via graph structure to select the entities in one corpus text.
+
+**Week 12**
+
+* Mon, 4/1.
+  * Read chapter 11 (multiprocessing). Note that we will skip chapter 10 (chatbots).
+* Weds, 4/3.
+  * Due: Reimplement your classification system to run on multiple cores. Evaluate time improvement for classification over the corpus.
+
+**Week 13**
+
+* Mon, 4/8.
+  * Read chapter 12 (neural networks).
+* Weds, 4/10.
+  * Due: Project proposal.
+
+**Week 14**
+
+* Mon, 4/15. Topics and readings to be determined by class.
+* Weds, 4/17. Topics and readings to be determined by class.
+
+**Week 15**
+
+* Mon, 4/22. In-class work session.
+* Weds, 4/24. In-class work session.
+
+**Week 16**
+
+* Presentations and conclusions.
+
+**Week 17**
+
+Final project due in lieu of exam, Weds, 5/8, 6:15pm.
