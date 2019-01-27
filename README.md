@@ -74,14 +74,14 @@ Detailed assignments will be provided separately.
 * Mon, 1/21. **No class** (MLK Day).
 * Weds, 1/23. 
   * Read Bengfort et al., chapter 1 (language and computation). 
-  * Due: [Implement `parse_gender` function](https://github.com/wilkens-teaching/textmining/blob/master/exercises/01%20gender.ipynb) as described (pp. 10-12). Submit output for three literary texts from the class corpus on GitHub.
+  * Due: [Implement `parse_gender` function](https://github.com/wilkens-teaching/textmining/blob/master/exercises/01%20gender.ipynb) as described (pp. 10-12). Submit output for three literary texts from the class corpus on GitHub. [Answer](https://github.com/wilkens-teaching/textmining/blob/master/exercises/01%20gender%20answer.ipynb).
 
 **Week 3** 
 
 * Mon, 1/28. 
   * Read chapter 2 (corpora).
 * Weds, 1/30. 
-  * Due: Write an NLTK `PlaintextCorpusReader` function that ingests the class corpus.
+  * Due: [Write an NLTK `PlaintextCorpusReader` function that ingests the class corpus](https://github.com/wilkens-teaching/textmining/blob/master/exercises/02%20corpus%20reader.ipynb).
  
 **Week 4** 
 
