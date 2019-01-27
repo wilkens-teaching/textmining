@@ -74,7 +74,7 @@ Detailed assignments will be provided separately.
 * Mon, 1/21. **No class** (MLK Day).
 * Weds, 1/23. 
   * Read Bengfort et al., chapter 1 (language and computation). 
-  * Due: [Implement `parse_gender` function](https://github.com/wilkens-teaching/textmining/blob/master/exercises/01%20gender.ipynb) as described (pp. 10-12). Submit output for three literary texts from the class corpus on GitHub. [Answer](https://github.com/wilkens-teaching/textmining/blob/master/exercises/01%20gender%20answer.ipynb).
+  * Due: [Implement `parse_gender` function](https://github.com/wilkens-teaching/textmining/blob/master/exercises/01%20gender.ipynb) as described (pp. 10-12). Submit output for three literary texts from the class corpus on GitHub. [[Answer]](https://github.com/wilkens-teaching/textmining/blob/master/exercises/01%20gender%20answer.ipynb).
 
 **Week 3** 
 
