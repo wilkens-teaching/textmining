@@ -86,7 +86,7 @@ Detailed assignments will be provided separately.
 
 * Mon, 2/4. **No class** (instructor travel).
 * Weds, 2/6. 
-  * Due: [Write an NLTK `PlaintextCorpusReader` function that ingests the class corpus](https://github.com/wilkens-teaching/textmining/blob/master/exercises/02%20corpus%20reader.ipynb).
+  * Due: [Write an NLTK `PlaintextCorpusReader` function that ingests the class corpus](https://github.com/wilkens-teaching/textmining/blob/master/exercises/02%20corpus%20reader.ipynb).[[Answer]](https://github.com/wilkens-teaching/textmining/blob/master/exercises/02%20corpus%20reader%20answer.ipynb).
   * Read chapter 3 (preprocessing).
 
 **Week 5** 
@@ -94,7 +94,7 @@ Detailed assignments will be provided separately.
 * Mon, 2/11.
   * Read chapter 4 (vectorization).
 * Weds, 2/13.
-  * Due: Build a processed and pickled version of the class corpus as described in the chapter.
+  * Due: [Build a processed and pickled version of the class corpus as described in the chapter, then work with the data](https://github.com/wilkens-teaching/textmining/blob/master/exercises/03%20corpus%20reader%20advanced.ipynb).
 
 **Week 6**
 
