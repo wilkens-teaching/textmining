@@ -96,69 +96,62 @@ Detailed assignments will be provided separately.
 * Weds, 2/13.
   * Due: [Build a processed and pickled version of the class corpus as described in the chapter, then work with the data](https://github.com/wilkens-teaching/textmining/blob/master/exercises/03%20corpus%20reader%20advanced.ipynb).
 
-**Week 6**
-
-* Mon, 2/18. **No class** (instructor travel).
-* Weds, 2/20.
-  * Read chapter 5 (classification).
-  * Due: Vectorize the corpus using the Scikit-Learn `TfidfVectorizer`. Visualize output via PCA.
-
-**Week 7**
-
-* Mon, 2/25.
-  * Read chapter 6 (clustering).
-* Weds, 2/27. **No class** (instructor travel).
+**Week 6-7**. No classes (instructor travel).
 
 **Week 8**
 
-* Mon, 3/4.
-  * Due: Build and evaluate a system that classifies corpus texts as *either* male/female *or* British/American.
-* Weds, 3/6.
-  * Read chapter 7 (context-aware analysis).
+* Mon, 3/4
+  * Read chapters 5-6 (classification and clustering)
+  * Due: Vectorize the corpus using the Scikit-Learn `TfidfVectorizer`. Visualize output via PCA.
+* Weds, 3/6
+  * Review chapters 5-6.
 
 **Week 9. Spring break.** No class meetings.
 
 **Week 10**
 
 * Mon, 3/18.
-  * Due: Build a system that performs topic modeling on the corpus texts and clusters those texts based on their topical content.
-* Weds, 3/20.
-  * Read chapter 8 (visualization).
-  * Read Tufte article.
-
+  * Due: Build and evaluate a system that classifies corpus texts as *either* male/female *or* British/American.
+  * Read chapter 7 (context-aware analysis).
+* Weds, 3/6.
+  * Review chapter 7
+  * 
 **Week 11**
 
 * Mon, 3/25.
-  * Read chapter 9 (networks).
-  * Due: Reimplement the gender/nationality classification system using n-gram features as described in chapter 7. Evaluate the performance of the new model relative to the unigram original.
+  * Due: Build a system that performs topic modeling on the corpus texts and clusters those texts based on their topical content.
 * Weds, 3/27.
-  * Read Underwood, Bamman, and Lee article.
+  * Read chapter 8 (visualization).
+  * Read Tufte article.
 
 **Week 12**
 
 * Mon, 4/1.
-  * Read chapter 11 (multiprocessing). Note that we will skip chapter 10 (chatbots).
-  * Due: Visualization exercise.
+  * Read chapter 9 (networks).
+  * Due: Reimplement the gender/nationality classification system using n-gram features as described in chapter 7. Evaluate the performance of the new model relative to the unigram original.
 * Weds, 4/3.
+  * Read Underwood, Bamman, and Lee article.
 
 **Week 13**
 
 * Mon, 4/8.
-  * Read chapter 12 (neural networks).
-  * Due: Implement entity resolution via graph structure to select the entities in one corpus text.
+  * Read chapter 11 (multiprocessing). Note that we will skip chapter 10 (chatbots).
+  * Due: Visualization exercise.
 * Weds, 4/10.
-  * Due: Project proposal.
 
 **Week 14**
 
-* Mon, 4/15. Topics and readings to be determined by class.
-* Weds, 4/17. Topics and readings to be determined by class.
-  * Due: Reimplement your classification system to run on multiple cores. Evaluate time improvement for classification over the corpus.
+* Mon, 4/15.
+  * Read chapter 12 (neural networks).
+  * Due: Implement entity resolution via graph structure to select the entities in one corpus text.
+* Weds, 4/17.
+  * Due: Project proposal.
 
 **Week 15**
 
-* Mon, 4/22. In-class work session.
-* Weds, 4/24. In-class work session.
+* Mon, 4/22. Topics and readings to be determined by class.
+* Weds, 4/24. Topics and readings to be determined by class.
+  * Due: Reimplement your classification system to run on multiple cores. Evaluate time improvement for classification over the corpus.
 
 **Week 16**
 
