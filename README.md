@@ -96,8 +96,14 @@ Detailed assignments will be provided separately.
 * Weds, 2/13.
   * Due: [Build a processed and pickled version of the class corpus as described in the chapter, then work with the data](https://github.com/wilkens-teaching/textmining/blob/master/exercises/03%20corpus%20reader%20advanced.ipynb).
 
-**Week 6-7**. No classes (instructor travel).
+**Week 6-7**. No formal classes (instructor travel).
 
+* For **Monday, 2/25**, read the articles below. Meet with your classmates at the regular time on that date to discuss them. As a group, formulate two or three questions that you'd like to discuss when we reconvene on 3/4.
+  * Grimmer, Justin and Brandon M. Stewart. ["Text as Data: The Promise and Pitfalls of Automatic Content Analysis Methods for Political Texts"](https://www.cambridge.org/core/journals/political-analysis/article/text-as-data-the-promise-and-pitfalls-of-automatic-content-analysis-methods-for-political-texts/F7AAC8B2909441603FEB25C156448F20).
+  * Underwood, Ted, David Bamman, and Sabrina Lee. ["The Transformation of Gender in English-Language Fiction"](http://culturalanalytics.org/2018/02/the-transformation-of-gender-in-english-language-fiction).
+  * Wilkens, Matthew. ["Genre, Computation, and the Varieties of Twentieth-Century U.S. Fiction"](http://culturalanalytics.org/2016/11/genre-computation-and-the-varieties-of-twentieth-century-u-s-fiction/).
+* At your leisure during our mini-break, work your way through the [Seaborn plotting tutorial](https://seaborn.pydata.org/tutorial/relational.html). Nothing to submit, but you'll want to know how to plot things down the road. If you're feeling up for it, you might also try the [Bokeh quickstart tutorial](https://bokeh.pydata.org/en/latest/docs/user_guide/quickstart.html#) to work with interactive plots.
+	
 **Week 8**
 
 * Mon, 3/4
@@ -130,7 +136,7 @@ Detailed assignments will be provided separately.
   * Read chapter 9 (networks).
   * Due: Reimplement the gender/nationality classification system using n-gram features as described in chapter 7. Evaluate the performance of the new model relative to the unigram original.
 * Weds, 4/3.
-  * Read Underwood, Bamman, and Lee article.
+  * TBA
 
 **Week 13**
 
