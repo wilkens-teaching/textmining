@@ -4,14 +4,17 @@ CAT_PATTERN = r'([a-z_\s]+)/.*' # We won't use this, but fall back to directory-
                                 # if no other labels are supplied
 
 import codecs
-import time
 import nltk
 import os
 import pickle
+import time
+import unicodedata
 from   glob import glob
+from   nltk import pos_tag, sent_tokenize, wordpunct_tokenize
+from   nltk.corpus import wordnet as wn
 from   nltk.corpus.reader.api import CorpusReader
 from   nltk.corpus.reader.api import CategorizedCorpusReader
-from   nltk import pos_tag, sent_tokenize, wordpunct_tokenize
+from   nltk.stem.wordnet import WordNetLemmatizer
 
 def make_cat_map(path, extension):
     """
@@ -300,19 +303,105 @@ class Preprocessor(object):
         # Return the path to the file relative to the target.
         return os.path.normpath(os.path.join(self.target, parent, basename))
 
-    def tokenize(self, fileid):
+    def tokenize(self, fileid, chunksize=0):
         """
         Segments, tokenizes, and tags a document in the corpus. Returns a
         generator of paragraphs, which are lists of sentences, which in turn
         are lists of part of speech tagged words.
         """
-        for paragraph in self.corpus.paras(fileids=fileid):
-            yield [
-                pos_tag(wordpunct_tokenize(sent))
-                for sent in sent_tokenize(paragraph)
-            ]
+        if chunksize==0:
+            for paragraph in self.corpus.paras(fileids=fileid):
+                yield [
+                    pos_tag(wordpunct_tokenize(sent))
+                    for sent in sent_tokenize(paragraph)
+                ]
+        else:
+            wc=0 # running count of tokens in current chunk
+            chunk = []
+            for paragraph in self.corpus.paras(fileids=fileid):
+                if wc<chunksize:
+                    tagged_par = [
+                            pos_tag(wordpunct_tokenize(sent))
+                            for sent in sent_tokenize(paragraph)
+                        ]
+                    wc += sum(len(tagged_sent) for tagged_sent in tagged_par)
+                    chunk.append(tagged_par)
+                else:
+                    yield chunk
+                    wc=0
+                    chunk=[]
+                    tagged_par = [
+                            pos_tag(wordpunct_tokenize(sent))
+                            for sent in sent_tokenize(paragraph)
+                        ]
+                    wc += sum(len(tagged_sent) for tagged_sent in tagged_par)
+                    chunk.append(tagged_par)
+            yield chunk
+          
+    def is_punct(self, token):
+        return all(
+            unicodedata.category(char).startswith('P') for char in token
+        )
 
-    def process(self, fileid):
+    def wn_lemmatize(self, token, pos_tag):
+        tag = {
+            'N': wn.NOUN,
+            'V': wn.VERB,
+            'R': wn.ADV,
+            'J': wn.ADJ
+        }.get(pos_tag[0], wn.NOUN)
+        return WordNetLemmatizer().lemmatize(token, tag) 
+
+    def normalize(self, sentence):
+        """
+        Given a wordpunct tokenized sentence, return same as list of lemmas,
+        lowercased and with punctuation removed.
+        """
+        
+        return [
+            self.wn_lemmatize(token, tag).lower()
+            for (token, tag) in pos_tag(sentence)
+            if not self.is_punct(token)
+        ]
+        
+    
+    def tokenize_norm(self, fileid, chunksize=0):
+        """
+        Segments, tokenizes, normalizes, and lemmatizes a document in the corpus. 
+        Returns a generator of paragraphs, which are lists of sentences, 
+        which in turn are lists of lemmatized words.
+        """
+        if chunksize==0:
+            for paragraph in self.corpus.paras(fileids=fileid):
+                yield [
+                    self.normalize(wordpunct_tokenize(sent))
+                    for sent in sent_tokenize(paragraph)
+                ]
+        else:
+            wc=0 # running count of tokens in current chunk
+            chunk = []
+            for paragraph in self.corpus.paras(fileids=fileid):
+                if wc<chunksize:
+                    tagged_par = [
+                            self.normalize(wordpunct_tokenize(sent))
+                            for sent in sent_tokenize(paragraph)
+                        ]
+                    wc += sum(len(tagged_sent) for tagged_sent in tagged_par)
+                    chunk.append(tagged_par)
+                else:
+                    yield chunk
+                    wc=0
+                    chunk=[]
+                    tagged_par = [
+                            self.normalize(wordpunct_tokenize(sent))
+                            for sent in sent_tokenize(paragraph)
+                        ]
+                    wc += sum(len(tagged_sent) for tagged_sent in tagged_par)
+                    chunk.append(tagged_par)
+            yield chunk
+   
+
+    def process(self, fileid, chunksize=0, norm=False):
         """
         For a single file does the following preprocessing work:
             1. Checks the location on disk to make sure no errors occur.
@@ -338,11 +427,22 @@ class Preprocessor(object):
             )
 
         # Create a data structure for the pickle
-        document = list(self.tokenize(fileid))
+        if norm:
+            document = list(self.tokenize_norm(fileid, chunksize))
+        else:
+            document = list(self.tokenize(fileid, chunksize))
 
         # Open and serialize the pickle to disk
-        with open(target, 'wb') as f:
-            pickle.dump(document, f, pickle.HIGHEST_PROTOCOL)
+        if chunksize==0: # Document not chunked
+            with open(target, 'wb') as f:
+                pickle.dump(document, f, pickle.HIGHEST_PROTOCOL)
+        else: # Document chunked
+            for seq, chunk in enumerate(document):
+                name, ext = os.path.splitext(target)
+                out_file = name + '-' + str(seq).zfill(5) + ext
+                with open(out_file, 'wb') as f:
+                    pickle.dump(chunk, f, pickle.HIGHEST_PROTOCOL)
+            
 
         # Clean up the document
         del document
@@ -350,7 +450,7 @@ class Preprocessor(object):
         # Return the target fileid
         return target
 
-    def transform(self, fileids=None, categories=None):
+    def transform(self, fileids=None, categories=None, chunksize=0, norm=False):
         """
         Transform the wrapped corpus, writing out the segmented, tokenized,
         and part of speech tagged corpus as a pickle to the target directory.
@@ -364,6 +464,6 @@ class Preprocessor(object):
         # Resolve the fileids to start processing and return the list of 
         # target file ids to pass to downstream transformers. 
         return [
-            self.process(fileid)
+            self.process(fileid, chunksize=chunksize, norm=norm)
             for fileid in self.fileids(fileids, categories)
         ]

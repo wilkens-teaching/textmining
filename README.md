@@ -117,26 +117,24 @@ Detailed assignments will be provided separately.
 **Week 10**
 
 * Mon, 3/18.
-  * Due: Build and evaluate a system that classifies corpus texts as *either* male/female *or* British/American.
   * Read chapter 7 (context-aware analysis).
 * Weds, 3/6.
-  * Review chapter 7
-  * 
+    * Due: [Build and evaluate a system that classifies corpus texts as *either* male/female *or* British/American.]()
+
 **Week 11**
 
 * Mon, 3/25.
-  * Due: Build a system that performs topic modeling on the corpus texts and clusters those texts based on their topical content.
-* Weds, 3/27.
   * Read chapter 8 (visualization).
   * Read Tufte article.
+* Wed, 3/27.
+  * Due: Build a system that performs topic modeling on the corpus texts and clusters those texts based on their topical content.
 
 **Week 12**
 
 * Mon, 4/1.
   * Read chapter 9 (networks).
-  * Due: Reimplement the gender/nationality classification system using n-gram features as described in chapter 7. Evaluate the performance of the new model relative to the unigram original.
 * Weds, 4/3.
-  * TBA
+  * Due: Reimplement the gender/nationality classification system using n-gram features as described in chapter 7. Evaluate the performance of the new model relative to the unigram original.
 
 **Week 13**
 
@@ -144,14 +142,14 @@ Detailed assignments will be provided separately.
   * Read chapter 11 (multiprocessing). Note that we will skip chapter 10 (chatbots).
   * Due: Visualization exercise.
 * Weds, 4/10.
+  * Due: Project proposal.
 
 **Week 14**
 
 * Mon, 4/15.
   * Read chapter 12 (neural networks).
-  * Due: Implement entity resolution via graph structure to select the entities in one corpus text.
 * Weds, 4/17.
-  * Due: Project proposal.
+  * Due: Implement entity resolution via graph structure to select the entities in one corpus text.
 
 **Week 15**
 
