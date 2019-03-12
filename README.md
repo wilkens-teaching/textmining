@@ -119,7 +119,7 @@ Detailed assignments will be provided separately.
 * Mon, 3/18.
   * Read chapter 7 (context-aware analysis).
 * Weds, 3/6.
-    * Due: [Build and evaluate a system that classifies corpus texts as *either* male/female *or* British/American.]()
+    * Due: [Build and evaluate a system that classifies corpus texts as *either* male/female *or* British/American.](https://github.com/wilkens-teaching/textmining/blob/master/exercises/05%20classification.ipynb)
 
 **Week 11**
 
