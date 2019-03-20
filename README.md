@@ -123,7 +123,7 @@ Detailed assignments will be provided separately.
 
 **Week 11**
 
-* Mon, 3/25.
+* Mon, 3/25. **Class begins at 11:30am and runs until 12:45pm.**
   * Read chapter 8 (visualization).
   * Read Tufte article.
 * Wed, 3/27.
