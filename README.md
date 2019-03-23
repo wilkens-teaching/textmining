@@ -74,7 +74,7 @@ Detailed assignments will be provided separately.
 * Mon, 1/21. **No class** (MLK Day).
 * Weds, 1/23. 
   * Read Bengfort et al., chapter 1 (language and computation). 
-  * Due: [Implement `parse_gender` function](https://github.com/wilkens-teaching/textmining/blob/master/exercises/01%20gender.ipynb) as described (pp. 10-12). Submit output for three literary texts from the class corpus on GitHub. [[Answer]](https://github.com/wilkens-teaching/textmining/blob/master/exercises/01%20gender%20answer.ipynb).
+  * Due: [Implement `parse_gender` function](https://github.com/wilkens-teaching/textmining/blob/master/exercises/01%20gender.ipynb) as described (pp. 10-12). Submit output for three literary texts from the class corpus (located on GitHub). [[Answer]](https://github.com/wilkens-teaching/textmining/blob/master/exercises/01%20gender%20answer.ipynb).
 
 **Week 3** 
 
@@ -86,7 +86,7 @@ Detailed assignments will be provided separately.
 
 * Mon, 2/4. **No class** (instructor travel).
 * Weds, 2/6. 
-  * Due: [Write an NLTK `PlaintextCorpusReader` function that ingests the class corpus](https://github.com/wilkens-teaching/textmining/blob/master/exercises/02%20corpus%20reader.ipynb).[[Answer]](https://github.com/wilkens-teaching/textmining/blob/master/exercises/02%20corpus%20reader%20answer.ipynb).
+  * Due: [Write an NLTK `PlaintextCorpusReader` function that ingests the class corpus](https://github.com/wilkens-teaching/textmining/blob/master/exercises/02%20corpus%20reader.ipynb). [[Answer]](https://github.com/wilkens-teaching/textmining/blob/master/exercises/02%20corpus%20reader%20answer.ipynb).
   * Read chapter 3 (preprocessing).
 
 **Week 5** 
@@ -94,7 +94,7 @@ Detailed assignments will be provided separately.
 * Mon, 2/11.
   * Read chapter 4 (vectorization).
 * Weds, 2/13.
-  * Due: [Build a processed and pickled version of the class corpus as described in the chapter, then work with the data](https://github.com/wilkens-teaching/textmining/blob/master/exercises/03%20corpus%20reader%20advanced.ipynb).
+  * Due: [Build a processed and pickled version of the class corpus as described in the chapter, then work with the data](https://github.com/wilkens-teaching/textmining/blob/master/exercises/03%20corpus%20reader%20advanced.ipynb).  [[Answer]](https://github.com/wilkens-teaching/textmining/blob/master/exercises/03%20corpus%20reader%20advanced%20answer.ipynb)
 
 **Week 6-7**. No formal classes (instructor travel).
 
@@ -108,7 +108,7 @@ Detailed assignments will be provided separately.
 
 * Mon, 3/4
   * Read chapters 5-6 (classification and clustering)
-  * Due: Vectorize the corpus using the Scikit-Learn `TfidfVectorizer`. Visualize output via PCA.
+  * Due: [Vectorize the corpus using the Scikit-Learn `TfidfVectorizer`.](https://github.com/wilkens-teaching/textmining/blob/master/exercises/04%20vectorization.ipynb) Visualize output via PCA. [[Answer]](https://github.com/wilkens-teaching/textmining/blob/master/exercises/04%20vectorization%20answers.ipynb)
 * Weds, 3/6
   * Review chapters 5-6.
 
@@ -119,15 +119,14 @@ Detailed assignments will be provided separately.
 * Mon, 3/18.
   * Read chapter 7 (context-aware analysis).
 * Weds, 3/6.
-    * Due: [Build and evaluate a system that classifies corpus texts as *either* male/female *or* British/American.](https://github.com/wilkens-teaching/textmining/blob/master/exercises/05%20classification.ipynb)
+    * Due: [Build and evaluate a system that classifies corpus texts as *either* male/female *or* British/American.](https://github.com/wilkens-teaching/textmining/blob/master/exercises/05%20classification.ipynb) [[Answer]](https://github.com/wilkens-teaching/textmining/blob/master/exercises/05%20classification%20answers.ipynb)
 
 **Week 11**
 
 * Mon, 3/25. **Class begins at 11:30am and runs until 12:45pm.**
   * Read chapter 8 (visualization).
-  * Read Tufte article.
 * Wed, 3/27.
-  * Due: Build a system that performs topic modeling on the corpus texts and clusters those texts based on their topical content.
+  * Due: [Build a system that performs topic modeling  and clsutering on the corpus texts](https://github.com/wilkens-teaching/textmining/blob/master/exercises/06%20clustering.ipynb).
 
 **Week 12**
 
