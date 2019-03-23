@@ -126,34 +126,34 @@ Detailed assignments will be provided separately.
 * Mon, 3/25. **Class begins at 11:30am and runs until 12:45pm.**
   * Read chapter 8 (visualization).
 * Wed, 3/27.
-  * Due: [Build a system that performs topic modeling  and clsutering on the corpus texts](https://github.com/wilkens-teaching/textmining/blob/master/exercises/06%20clustering.ipynb).
+  * Due: [Build a system that performs topic modeling and clsutering on the corpus texts](https://github.com/wilkens-teaching/textmining/blob/master/exercises/06%20clustering.ipynb).
 
-**Week 12**
+**Week 12** 
 
-* Mon, 4/1.
-  * Read chapter 9 (networks).
-* Weds, 4/3.
-  * Due: Reimplement the gender/nationality classification system using n-gram features as described in chapter 7. Evaluate the performance of the new model relative to the unigram original.
+Independent work week (project proposal).
+
+Use both class meetings this week to make progress on your final project. Attendance is optional, but strongly encouraged. Talk to your peers about your ideas and the state of your work. Listen to what they suggest and offer suggestions to them. The aim is to end the week with a solid idea of what you'd like to do, how you can do it, and what you'll need to get it done.
 
 **Week 13**
 
 * Mon, 4/8.
-  * Read chapter 11 (multiprocessing). Note that we will skip chapter 10 (chatbots).
-  * Due: Visualization exercise.
+  * Read chapter 9 (networks).
+  * Due: project proposal. 300-500 words covering your research question, corpus, methods, and hypotheses.
 * Weds, 4/10.
-  * Due: Project proposal.
+  * Due: Reimplement the gender/nationality classification system using n-gram features as described in chapter 7. Evaluate the performance of the new model relative to the unigram original.
 
 **Week 14**
 
 * Mon, 4/15.
-  * Read chapter 12 (neural networks).
+  * Read chapter 11 (multiprocessing). Note that we will skip chapter 10 (chatbots).
 * Weds, 4/17.
   * Due: Implement entity resolution via graph structure to select the entities in one corpus text.
 
+
 **Week 15**
 
-* Mon, 4/22. Topics and readings to be determined by class.
-* Weds, 4/24. Topics and readings to be determined by class.
+* Mon, 4/22. Read chapter 12 (deep learning).
+* Weds, 4/24.
   * Due: Reimplement your classification system to run on multiple cores. Evaluate time improvement for classification over the corpus.
 
 **Week 16**
