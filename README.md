@@ -126,7 +126,7 @@ Detailed assignments will be provided separately.
 * Mon, 3/25. **Class begins at 11:30am and runs until 12:45pm.**
   * Read chapter 8 (visualization).
 * Wed, 3/27.
-  * Due: [Build a system that performs topic modeling and clsutering on the corpus texts](https://github.com/wilkens-teaching/textmining/blob/master/exercises/06%20clustering.ipynb).
+  * Due: [Build a system that performs topic modeling and clustering on the corpus texts](https://github.com/wilkens-teaching/textmining/blob/master/exercises/06%20clustering.ipynb).
 
 **Week 12** 
 
