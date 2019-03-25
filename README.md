@@ -140,7 +140,7 @@ Use both class meetings this week to make progress on your final project. Attend
   * Read chapter 9 (networks).
   * Due: project proposal. 300-500 words covering your research question, corpus, methods, and hypotheses.
 * Weds, 4/10.
-  * Due: Reimplement the gender/nationality classification system using n-gram features as described in chapter 7. Evaluate the performance of the new model relative to the unigram original.
+  * Due: Reimplement the gender/nationality classification system using keyphrase, n-gram, entity, or other context-aware features as described in chapter 7. Evaluate the performance of the new model relative to the unigram original.
 
 **Week 14**
 
