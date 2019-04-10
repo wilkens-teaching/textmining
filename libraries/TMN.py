@@ -2,19 +2,28 @@ DOC_PATTERN = r'.+\.txt'        # Documents are just files that end in '.txt'
 PKL_PATTERN = r'.+\.pickle'     # Pickled files end in .pickle
 CAT_PATTERN = r'([a-z_\s]+)/.*' # We won't use this, but fall back to directory-based labels
                                 # if no other labels are supplied
+GRAMMAR = r'KT: {(<JJ>* <NN.*>+ <IN>)? <JJ>* <NN.*>+}' # CFG for KeyphraseExtractor class
+GOODLABELS = frozenset(['PERSON', 'ORGANIZATION', 'FACILITY', 'GPE', 'GSP'])
+                                # Entities to retain in EntityExtractor class
+
 
 import codecs
 import nltk
+import numpy as np
 import os
 import pickle
 import time
 import unicodedata
 from   glob import glob
-from   nltk import pos_tag, sent_tokenize, wordpunct_tokenize
+from   itertools import groupby
+from   nltk import ne_chunk, pos_tag, sent_tokenize, wordpunct_tokenize
+from   nltk.chunk import RegexpParser, tree2conlltags
 from   nltk.corpus import wordnet as wn
-from   nltk.corpus.reader.api import CorpusReader
-from   nltk.corpus.reader.api import CategorizedCorpusReader
+from   nltk.corpus.reader.api import CorpusReader, CategorizedCorpusReader
 from   nltk.stem.wordnet import WordNetLemmatizer
+from   sklearn.base import BaseEstimator, TransformerMixin
+from   sklearn.model_selection import KFold, train_test_split as tts
+from   unicodedata import category as unicat
 
 def make_cat_map(path, extension):
     """
@@ -467,3 +476,107 @@ class Preprocessor(object):
             self.process(fileid, chunksize=chunksize, norm=norm)
             for fileid in self.fileids(fileids, categories)
         ]
+    
+
+class KeyphraseExtractor(BaseEstimator, TransformerMixin):
+    """
+    Wraps a PickledCorpusReader consisting of pos-tagged documents.
+    """
+    def __init__(self, grammar=GRAMMAR):
+        self.grammar = GRAMMAR
+        self.chunker = RegexpParser(self.grammar)
+
+    def normalize(self, sent):
+        """
+        Removes punctuation from a tokenized/tagged sentence and
+        lowercases words.
+        """
+        is_punct = lambda word: all(unicat(char).startswith('P') for char in word)
+        sent = filter(lambda t: not is_punct(t[0]), sent)
+        sent = map(lambda t: (t[0].lower(), t[1]), sent)
+        return list(sent)
+
+    def extract_keyphrases(self, document):
+        """
+        For a document, parse sentences using our chunker created by
+        our grammar, converting the parse tree into a tagged sequence.
+        Yields extracted phrases.
+        """
+        for sents in document:
+            for sent in sents:
+                sent = self.normalize(sent)
+                if not sent: continue
+                chunks = tree2conlltags(self.chunker.parse(sent))
+                phrases = [
+                    " ".join(word for word, pos, chunk in group).lower()
+                    for key, group in groupby(
+                        chunks, lambda term: term[-1] != 'O'
+                    ) if key
+                ]
+                for phrase in phrases:
+                    yield phrase
+
+    def fit(self, documents, y=None):
+        return self
+
+    def transform(self, documents):
+        for document in documents:
+            yield list(self.extract_keyphrases(document))
+            
+            
+class EntityExtractor(BaseEstimator, TransformerMixin):
+    def __init__(self, labels=GOODLABELS, **kwargs):
+        self.labels = labels
+
+    def get_entities(self, document):
+        entities = []
+        for paragraph in document:
+            for sentence in paragraph:
+                trees = ne_chunk(sentence)
+                for tree in trees:
+                    if hasattr(tree, 'label'):
+                        if tree.label() in self.labels:
+                            entities.append(
+                                ' '.join([child[0].lower() for child in tree])
+                                )
+        return entities
+
+    def fit(self, documents, labels=None):
+        return self
+
+    def transform(self, documents):
+        for document in documents:
+            yield self.get_entities(document)
+            
+            
+class CorpusLoader(object):
+
+    def __init__(self, reader, folds=12, shuffle=True, categories=None):
+        self.reader = reader
+        self.folds  = KFold(n_splits=folds, shuffle=shuffle)
+        self.files  = np.asarray(self.reader.fileids(categories=categories))
+
+    def fileids(self, idx=None):
+        if idx is None:
+            return self.files
+        return self.files[idx]
+
+    def documents(self, idx=None):
+        for fileid in self.fileids(idx):
+            yield list(self.reader.docs(fileids=[fileid]))
+
+    def labels(self, idx=None):
+        return [
+            self.reader.categories(fileids=[fileid])[0]
+            for fileid in self.fileids(idx)
+        ]
+
+    def __iter__(self):
+        for train_index, test_index in self.folds.split(self.files):
+            X_train = self.documents(train_index)
+            y_train = self.labels(train_index)
+
+            X_test = self.documents(test_index)
+            y_test = self.labels(test_index)
+
+            yield X_train, X_test, y_train, y_test
