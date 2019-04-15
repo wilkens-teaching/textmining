@@ -147,6 +147,7 @@ Use both class meetings this week to make progress on your final project. Attend
 * Mon, 4/15.
   * Read chapter 11 (multiprocessing). Note that we will skip chapter 10 (chatbots).
 * Weds, 4/17.
+  * Quick intros to Pandas and Gephi.
   * Due: [Implement an entity graph and assess centrality measures for selected entity types in corpus texts](https://github.com/wilkens-teaching/textmining/blob/master/exercises/09%20graph%20analysis.ipynb).
 
 
