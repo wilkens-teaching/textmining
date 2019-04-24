@@ -102,3 +102,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+data/pitchfork/database.sqlite
+data/pitchfork/keras_nn.h5
+data/pitchfork/nn_pipeline.pkl
+data/pitchfork/pitchfork_clf_good.pkl
+data/pitchfork/pitchfork_clf.pkl
