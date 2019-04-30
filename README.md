@@ -38,7 +38,7 @@ The primary objective of the course is to build proficiency in applied text anal
 
 ## Work and grading
 
-In addition to weekly problem sets, you will be required to complete one project proposal of about 1,000 words, a brief in-class presentation, and a final project that employs computational techniques covered in the course. Overall grades will be based on the problem sets (35% in sum), proposal (10%), presentation (5%), final project (30%), and class participation (20%). _You must satisfactorily complete all assignments to pass the course._
+In addition to weekly problem sets, you will be required to complete one project proposal of about 1,000 words, a brief in-class presentation, and a final project that employs computational techniques covered in the course. Overall grades will be based on the problem sets (35% in sum), proposal (7%), presentation (3%), final project (40%), and class participation (15%). _You must satisfactorily complete all assignments to pass the course._
 
 
 ## Policy statements
